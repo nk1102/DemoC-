@@ -1,1 +1,1 @@
-# DemoC#
+# DemoC# Apllication for beginners
