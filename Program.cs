@@ -1,19 +1,36 @@
 ﻿using System;
+using System.ComponentModel.DataAnnotations;
 
 class Program
 {
-   public static void Main()
+    // code for the Leetcode problem 
+
+
+    public static  int LengthOfLongestSubstring(string s)
     {
-        Console.WriteLine("Enter the first number: ");
-        int number1 = Convert.ToInt32(Console.ReadLine());
+        int maxLength = 0;
+        int start = 0;
+        Dictionary<char, int> charMap = new Dictionary<char, int>();
 
-        Console.WriteLine("Enter the second number: ");
-        int number2 = Convert.ToInt32(Console.ReadLine());
+        for (int end = 0; end < s.Length; end++)
+        {
+            if (charMap.ContainsKey(s[end]))
+            {
+                // If the current character is already in the map, update the start pointer
+                // to the next index after the last occurrence of the character.
+                start = Math.Max(start, charMap[s[end]] + 1);
+            }
 
-        int sum = number1 + number2;
+            charMap[s[end]] = end; // Update the index of the current character
+            maxLength = Math.Max(maxLength, end - start + 1); // Update the maximum length
+        }
 
-        Console.WriteLine("The sum of {0} and {1} is {2}", number1, number2, sum);
+        return maxLength;
+    }
 
-        Console.ReadLine();
+    public static void Main()
+    {
+        String str = Console.ReadLine();
+        Console.WriteLine(LengthOfLongestSubstring(str));
     }
 }
