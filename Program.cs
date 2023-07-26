@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DemoC_;
+using System;
 using System.ComponentModel.DataAnnotations;
 
 class Program
@@ -30,7 +31,24 @@ class Program
 
     public static void Main()
     {
-        String str = Console.ReadLine();
-        Console.WriteLine(LengthOfLongestSubstring(str));
+     /*   String str = Console.ReadLine();
+        Console.WriteLine(LengthOfLongestSubstring(str));*/
+
+
+
+        // OOP code 
+
+        OOP account = new OOP("123456789", "John Doe", 1000.00m);
+
+        // Performing some operations on the account
+        account.CheckBalance();  // Initial balance
+
+        account.Deposit(500.00m);
+        account.Withdraw(200.00m);
+        account.Withdraw(1500.00m); // This should fail due to insufficient funds
+
+        account.CheckBalance();  // Final balance
+
+        Console.ReadKey();
     }
 }
