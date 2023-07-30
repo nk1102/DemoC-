@@ -1,6 +1,8 @@
 ﻿using DemoC_;
 using System;
 using System.ComponentModel.DataAnnotations;
+using System.Reflection.Metadata;
+using static DemoC_.Inheritance;
 
 class Program
 {
@@ -38,17 +40,26 @@ class Program
 
         // OOP code 
 
-        OOP account = new OOP("123456789", "John Doe", 1000.00m);
+     //   OOP account = new OOP("123456789", "John Doe", 1000.00m);
 
         // Performing some operations on the account
-        account.CheckBalance();  // Initial balance
+       // account.CheckBalance();  // Initial balance
 
-        account.Deposit(500.00m);
-        account.Withdraw(200.00m);
-        account.Withdraw(1500.00m); // This should fail due to insufficient funds
+        //account.Deposit(500.00m);
+        //account.Withdraw(200.00m);
+//        account.Withdraw(1500.00m); // This should fail due to insufficient funds
 
-        account.CheckBalance();  // Final balance
+  //      account.CheckBalance();  // Final balance
 
-        Console.ReadKey();
+   //     Console.ReadKey();
+
+
+
+        Shape obj = new Shape();
+        obj.Display();
+        
+        Circle circle = new Circle();
+        circle.Display();
+        
     }
 }
